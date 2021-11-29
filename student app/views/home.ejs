@@ -1,0 +1,15 @@
+<% layout('layout')%>
+<% block('title', 'home')%>
+
+    <div class="container" >
+         
+
+        <div class="text-center">
+            <h1 class="index-h1">Welcome to StudentRestApp</h1>
+            <p class="index-p">This site is for the managment of student's exams evaluations and only the responsible and teachers who have the full permission to do so</p>
+            
+            <% if(!user) {%>
+                <a type="button" href="/login" class="btn btn-lg btn-default get-started">Get Started</a>
+            <% } %>    
+        </div>
+    </div>

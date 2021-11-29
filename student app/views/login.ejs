@@ -1,0 +1,61 @@
+<% layout('layout')%>
+<% block('title', 'login')%>
+
+<div class="row">
+    <div class="text-center">
+
+        <% if(typeof errors != 'undefined') { %>
+            <% for(var i =0 ; i<errors.length ; i++) {%>
+                <div class="text-center col-md-offset-4 col-md-4">
+                    <div class="alert alert-danger">
+                        <strong><%= errors[i].msg %></strong>
+                    </div>
+    
+                </div>
+                <% } %>
+        <% } %>
+    </div>
+
+    <div class="col-md-4 col-md-offset-4">
+        <h1 class="index-h1 text-center" style="font-size: 3em;">Login</h1>
+        <br>
+        <form class="form-signin main-login main-center" action="/login" method="post">
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-user fa" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Email address"  autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-lock fa" aria-hidden="true"></i>
+                    </span>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" >
+                </div>
+            </div>
+
+            <div class="funkyradio">
+                <div class="funkyradio-primary">
+                    <input type="radio" name="radio" id="radio2" value="student" checked/>
+                    <label for="radio2">Student</label>
+                </div>
+                <div class="funkyradio-success">
+                    <input type="radio" name="radio" id="radio3" value="admin" />
+                    <label for="radio3">Administrator | Teacher</label>
+                </div>
+                <!-- <div class="funkyradio-danger">
+                <input type="radio" name="radio" id="radio4" value="responsible"/>
+                <label for="radio4">Responsible</label>
+            </div> -->
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+</div>
+
+

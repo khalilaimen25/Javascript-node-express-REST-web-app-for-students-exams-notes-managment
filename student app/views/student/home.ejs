@@ -1,0 +1,44 @@
+<% layout('../layout')%>
+    <% block('title', 'student home')%>
+
+        <header>
+            <div class="page-heading3">
+                <div class="container">
+                    <h1>Student Dashboard</h1>
+                    <p>You can display your exams evaluations, see the final PV
+                        <br>and send raclamations to your teachers or your responsible</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <a href="/teachers" type="button" class="btn btn-success btn-lg pull-right">Teachers</a>
+                    </div>
+                    <div class=" col-sm-4 text-center">
+                        <div class="btn-group">
+                        
+                            <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">
+                                Reclamation
+                                <span class="caret"></span>
+                            </button>
+                        
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="/reclamation/responsible">to Responsible</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="/reclamation/teacher">to Teacher</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <a href="/responsible/displayPV" type="button" class="btn btn-warning btn-lg">Final PV</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+           
+        </div>

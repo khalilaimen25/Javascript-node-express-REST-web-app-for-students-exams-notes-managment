@@ -1,0 +1,22 @@
+<% layout('../layout')%>
+    <% block('title', 'reclamations')%>
+
+        <header>
+            <div class="page-heading2">
+                <div class="container">
+                    <h1>Students Reclamations</h1>
+                    <p>
+                        <%= reclamation.name %>
+                    </p>
+                    <h5>
+                        <%= reclamation.date %>
+                    </h5>
+                    <p class="read">
+                        <%- reclamation.body %>
+                    </p>
+                </div>
+                <div class="row text-center">
+                    <a href="/reclamations" type="button" class="btn btn-default btn-lg">Return to reclamations</a>
+                </div>
+            </div>
+        </header>

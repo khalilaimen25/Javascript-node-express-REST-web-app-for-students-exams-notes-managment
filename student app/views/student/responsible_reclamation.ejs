@@ -1,0 +1,23 @@
+<% layout('../layout')%>
+<% block('title', 'student home')%>
+
+<header>
+    <div class="page-heading3">
+        <div class="container">
+            <h1>Student Responsible Reclamation</h1>
+            <p>You can send reaclamations to the responsible about the final PV</p>
+        </div>
+        <div class="container">
+            <form action="" method="post">
+                <div class="form-group">
+                    <textarea type="text" name="reclamation_body" id="body_article" class="form-control" value="">write your reclamation here</textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-lg btn-primary">Send</button>
+                <a href="/dashboard" class="btn btn-default btn-lg ">Cancel</a>
+
+                
+            </form>
+        </div> 
+    </div>   
+</header>            

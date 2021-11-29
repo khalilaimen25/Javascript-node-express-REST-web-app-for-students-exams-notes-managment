@@ -1,0 +1,32 @@
+<% layout('../layout')%>
+    <% block('title', 'update note')%>
+
+        <header>
+            <div class="page-heading2">
+                <div class="container">
+                    <h1>
+                        <%=students.fullname%> Note</h1>
+                    <p>You can update students notes</p>
+                    <p>Module :
+                        <%= user.teacher.codeModule %>
+                    </p>
+                    <div class="row">
+                        <div class="container">
+                            <form class="update-note" method="post" action="/student/note/<%=note.id%>">
+                                <div class="form-group">
+                                    Note :
+                                    <input  name="note" style="color:#000;" value="<%= note.value %>">
+                                    <button type="submit" class="btn btn-primary btn-lg ">Edit note</button>
+                                    <a href="/students" class="btn btn-default btn-lg">Cancel</a>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </header>

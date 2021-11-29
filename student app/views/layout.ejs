@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%=blocks.title%>
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bootstrap/css/style.css" />
+    <link rel="stylesheet" href="/bootstrap/css/funckyradiobtn.css" />
+    <link rel="stylesheet" href="/bootstrap/css/navbarcustom.css" />
+    <script src="/bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="/bootstrap/js/script.js"></script>
+</head>
+
+<body>
+    <!-- ************* navbar start **************************     -->
+    <%- partial('includes/_navbar') %>
+    <!-- ********************** navbar end *************************** -->
+
+            
+    <%- body %>
+    <div class="container" style="margin-bottom: 80px;">
+         <%- messages('./includes/_message' , locals)  %>
+    </div>
+
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">2018 - &copy; StudyExpressApp By H.Aimen Khalil</p>
+        </div>
+    </div>    
+
+    <!-- <script src="//cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script> -->
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+
+        $(".alert").fadeTo(5000, 500).fadeOut(1500, function () {
+            $(".alert").alert('close');
+        });
+
+        CKEDITOR.replace('body_article');
+
+    </script>
+
+</body>
+
+</html>

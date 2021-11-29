@@ -1,0 +1,49 @@
+<% layout('../layout')%>
+    <% block('title', 'actualities')%>
+
+        <header>
+            <div class="page-heading2">
+                <div class="container">
+                    <h1>Teacher Actualities</h1>
+                    <p>You can read the admin actualities </p>
+                </div>
+                <div class="row text-center">  
+                          
+                    <a href="/dashboard" type="button" class="btn btn-default btn-lg">Return to dashboard</a>
+     
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Num</th>
+                        <th>To</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<actualities.length ; i++){ %>
+                        <tr>
+                            <td>
+                                <%= i+1 %>
+                            </td>
+                            <td>
+                                <%= actualities[i].to %>
+                            </td>
+                            <td>
+                                <%= actualities[i].date %>
+                            </td>
+                            <td>
+                                <a href="/actuality/<%=actualities[i].id%>" class="btn btn-default">read</a>
+                            </td>
+                         
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+
+        </div>

@@ -1,0 +1,87 @@
+<% layout('../layout')%>
+    <% block('title', 'teachers manager')%>
+
+        <header>
+            <div class="page-heading2">
+                <div class="container">
+                    <h1>Students managment</h1>
+                    <p>You can add students notes</p>
+                </div>
+                <div class="row text-center">
+                        <a href="/dashboard" type="button" class="btn btn-default btn-lg">Return to dashboard</a>
+                    
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Num</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Filiere</th>
+                        <th>Year</th>
+                        <th>Note</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<students.length ; i++){ %>
+                        <tr>
+                            <td>
+                                <%= i+1 %>
+                            </td>
+                            <td>
+                                <%= students[i].fullname %>
+                            </td>
+                            <td>
+                                <%= students[i].email %>
+                            </td>
+                            <td>
+                                <%= students[i].filiere %>
+                            </td>
+                            <td>
+                                <%= students[i].year %>
+                            </td>
+                            <td>
+                                <%= notes[i].note %>
+                            </td>
+                            <td>
+                                <!-- <a href="/teacher/student/note/<%=students[i].id%>" class="btn btn-primary pull-right 
+                                    <%if(notes[i].note != 'N/A'){%>
+                                        disabled
+                                    <%}%>" >add note</a> -->
+                                <%if(notes[i].note == 'N/A'){%>
+                                    <a href="/student/<%=students[i].id%>/note" class="btn btn-primary pull-right">add note</a>
+                                <%}else{%>
+                                    <a class="btn btn-primary pull-right disabled" disabled>add note</a>
+                                <%}%>
+                            </td>
+                            <td class="text-center">
+                                <%if(notes[i].note == 'N/A'){%>
+                                    <a class="btn btn-default disabled" disabled>update note</a>
+                                <%}else{%>
+                                    <a href="/student/<%=students[i].id%>/note/<%=notes[i].id%>" class="btn btn-default">update note</a>
+                                <%}%>                     
+                            </td>
+                            <td>
+                                <%if(notes[i].note == 'N/A'){%>
+                                    <a class="btn btn-danger disabled" disabled>delete note</a>
+                                <%}else{%>
+                                    <!-- <form action="/student/note/<%=notes[i].id%>?_method=delete" method="post">
+                                        <button type="submit" class="btn btn-danger">delete note</a>
+                                    </form> -->
+                                    <a class="btn btn-danger delete-note" data-id=<%=notes[i].id%> >delete note</a>
+
+                                <%}%>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+
+        </div>
